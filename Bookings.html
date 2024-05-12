@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPLORE XPANSE - Your Travel Companion</title>
+    <link rel="stylesheet" href="Bookings.css">
+    <style>
+        /* CSS styles remain the same */
+ .product-card {
+    background-color: #fff;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="hope.png" alt="Explore Xpanse Logo" width="800px" height="200px">
+    <nav>       
+                <a href="Home.html">Home</a>
+                <a href="Destinations.html">Destinations</a>
+                <a href="Blog list.html">Blog list</a>
+                <a href="Bookings.html">Bookings</a>
+                <a href="Productdetails.html">Packages</a>
+        </nav>
+        <h2>EXPLORE XPANSE</h2>
+        <!-- <img src="logos.png" alt="Explore Xpanse Logo" width="150px" height="150px"> -->
+    </header>
+    <!-- Your existing HTML code -->
+    <h2>BOOK YOUR DESTINATION</h2>
+    <!-- Booking Form -->
+    <form id="booking-form">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required><br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <button type="submit">Book Now</button>
+    </form>
+    <footer>
+        <p>&copy; 2024 Explore Xpanse. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('booking-form');
+
+        form.addEventListener('submit', function(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Get form inputs
+            const destination = document.getElementById('destination').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const date = document.getElementById('date').value;
+
+            // Validate destination
+            if (destination === '') {
+                alert('Please enter a destination.');
+                return;
+            }
+
+            // Validate name
+            if (name === '') {
+                alert('Please enter your name.');
+                return;
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Validate date
+            const currentDate = new Date();
+            const selectedDate = new Date(date);
+            if (selectedDate < currentDate) {
+                alert('Please select a future date.');
+                return;
+            }
+
+            // If all validations pass, submit the form
+            alert('Form submitted successfully!');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
