@@ -65,3 +65,18 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+/* Style for view details buttons */
+.view-details-button {
+    display: inline-block;
+    background-color: #007bff; /* Blue color, you can change this */
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-details-button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
